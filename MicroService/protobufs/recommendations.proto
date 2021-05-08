@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+message RecommendationRequest {
+    int64 ID = 1;
+}
+
+message BookRecommendation {
+    int64 CLIENTNUM = 1;
+    string Attrition_Flag = 2;
+    int64 Customer_Age = 3;
+    string Gender = 4;
+    int64 Dependent_count = 5;
+    string Education_Level = 6;
+    string Marital_Status = 7;
+    string Income_Category = 8;
+    string Card_Category = 9;
+    int64 Months_on_book = 10;
+    int64 Total_Relantionship_Count = 11;
+    int64 Months_Inactive_12_mon = 12;
+    int64 Contacts_Count_12_mon = 13;
+    int64 Credit_Limit = 14;
+    int64 Total_Revolving_Bal = 15;
+    int64 Avg_Open_To_Buy = 16;
+    float Total_Amt_Chng_Q4_Q1 = 17;
+    int64 Total_Trans_Amt = 18;
+    int64 Total_Trans_Ct = 19;
+    float Total_Ct_Chng_Q4_Q1 = 20;
+    float Avg_Utilization_Ratio = 21;
+    float Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Cou = 22;
+    float Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Co = 23;
+    
+}
+
+message RecommendationResponse {
+    BookRecommendation recommendations = 1;
+}
+
+service Recommendations {
+    rpc Recommend (RecommendationRequest) returns (RecommendationResponse);
+}

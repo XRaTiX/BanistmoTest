@@ -1,0 +1,45 @@
+<!-- <h1>Hi {{vm.user.firstName}}!</h1>
+<p>You're logged in!!</p>
+<h3>All registered users:</h3>
+<ul>
+  <li ng-repeat="user in vm.allUsers">
+    {{user.username}} ({{user.firstName}} {{user.lastName}}) -
+    <a ng-click="vm.deleteUser(user.id)">Delete</a>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<p><a href="#!/login" class="btn btn-primary">Logout</a></p> -->
+
+<div class="container">
+  <br />
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <form class="card card-sm">
+        <div class="card-body row no-gutters align-items-center">
+          <div class="col-auto">
+            <i class="fas fa-search h4 text-body"></i>
+          </div>
+          <!--end of col-->
+          <div class="col">
+            <input
+              class="form-control form-control-lg form-control-borderless"
+              type="number"
+              placeholder="Search ID of a client"
+              ng-model="id"
+            />
+          </div>
+          <!--end of col-->
+          <div class="col-auto">
+            <button class="btn btn-lg btn-success" ng-click="vm.search(id)">
+              Search
+            </button>
+          </div>
+          <!--end of col-->
+        </div>
+      </form>
+      <p><a href="#!/login" class="btn btn-lg btn-primary">Logout</a></p>
+    </div>
+
+    <!--end of col-->
+  </div>
+</div>

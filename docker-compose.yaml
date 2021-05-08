@@ -1,0 +1,59 @@
+version: '3.8'
+services:
+    mysql:
+        container_name: 
+            mysql
+        image: 
+            mysql
+        environment:
+            - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
+        ports:
+            - 127.0.0.1:3306:3306
+        volumes:
+        - ./MySQL_Data:/var/lib/mysql
+    recommendations:
+        container_name: 
+            microservice
+        build:
+            context: 
+                MicroService
+            dockerfile: 
+                recommendations/Dockerfile
+        image: 
+            recommendations
+        environment:
+            - DB_HOST=db
+        links:
+            - mysql:db
+        ports:
+            - 50051:50051
+        command: ["./wait-for-it.sh", "127.0.0.1:3306","--", "python", "recommendations.py"]
+    backend:
+        container_name:
+            webserver
+        build:
+            context: 
+                BackEnd
+            dockerfile:
+                Dockerfile
+        image:
+            backend
+        environment:
+            - DATABASE_HOST=db
+        links:
+            - mysql:db 
+        ports:
+            - 3000:3000
+        command: ["./wait-for-it.sh", "db:3306","--", "node", "app.js"]
+    frontend:
+        container_name:
+            client
+        build:
+            context: 
+                FrontEnd
+            dockerfile:
+                Dockerfile
+        image:
+            frontend
+        ports:
+            - 80:80

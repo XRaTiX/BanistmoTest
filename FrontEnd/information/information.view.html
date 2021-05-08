@@ -1,0 +1,78 @@
+<!-- <h1>Hi {{vm.user.firstName}}!</h1>
+<p>You're logged in!!</p>
+<h3>All registered users:</h3>
+<ul>
+  <li ng-repeat="user in vm.allUsers">
+    {{user.username}} ({{user.firstName}} {{user.lastName}}) -
+    <a ng-click="vm.deleteUser(user.id)">Delete</a>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<p><a href="#!/login" class="btn btn-primary">Logout</a></p> -->
+<div class="table-responsive">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">CLIENTNUM</th>
+        <th scope="col">Attrition_Flag</th>
+        <th scope="col">Customer_Age</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Dependent_count</th>
+        <th scope="col">Education_Level</th>
+        <th scope="col">Marital_Status</th>
+        <th scope="col">Income_Category</th>
+        <th scope="col">Card_Category</th>
+        <th scope="col">Months_on_book</th>
+        <th scope="col">Total_Relantionship_Count</th>
+        <th scope="col">Months_Inactive_12_mon</th>
+        <th scope="col">Contacts_Count_12_mon</th>
+        <th scope="col">Credit_Limit</th>
+        <th scope="col">Total_Revolving_Bal</th>
+        <th scope="col">Avg_Open_To_Buy</th>
+        <th scope="col">Total_Amt_Chng_Q4_Q1</th>
+        <th scope="col">Total_Trans_Amt</th>
+        <th scope="col">Total_Trans_Ct</th>
+        <th scope="col">Total_Ct_Chng_Q4_Q1</th>
+        <th scope="col">Avg_Utilization_Ratio</th>
+        <th scope="col">
+          Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon
+        </th>
+        <th scope="col">
+          Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_2
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{vm.CLIENTNUM}}</th>
+        <td>{{vm.Attrition_Flag}}</td>
+        <td>{{vm.Customer_Age}}</td>
+        <td>{{vm.Gender}}</td>
+        <td>{{vm.Dependent_count}}</td>
+        <td>{{vm.Education_Level}}</td>
+        <td>{{vm.Marital_Status}}</td>
+        <td>{{vm.Income_Category}}</td>
+        <td>{{vm.Card_Category}}</td>
+        <td>{{vm.Months_on_book}}</td>
+        <td>{{vm.Total_Relationship_Count}}</td>
+        <td>{{vm.Months_Inactive_12_mon}}</td>
+        <td>{{vm.Contacts_Count_12_mon}}</td>
+        <td>{{vm.Credit_Limit}}</td>
+        <td>{{vm.Total_Revolving_Bal}}</td>
+        <td>{{vm.Avg_Open_To_Buy}}</td>
+        <td>{{vm.Total_Amt_Chng_Q4_Q1}}</td>
+        <td>{{vm.Total_Trans_Amt}}</td>
+        <td>{{vm.Total_Trans_Ct}}</td>
+        <td>{{vm.Total_Ct_Chng_Q4_Q1}}</td>
+        <td>{{vm.Avg_Utilization_Ratio}}</td>
+        <td>
+          {{vm.Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Cou}}
+        </td>
+        <td>
+          {{vm.Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Co}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p><a href="/" class="btn btn-lg btn-primary">Back</a></p>
